@@ -1,5 +1,6 @@
 package com.bindiya.ejyleassessment.di
 
+import com.bindiya.ejyleassessment.BuildConfig
 import com.bindiya.ejyleassessment.data.remote.CustomerService
 import dagger.Module
 import dagger.Provides
@@ -19,7 +20,7 @@ class AppModule {
     @Provides
     @Singleton
     fun provideCustomerService(): CustomerService {
-        return Retrofit.Builder().baseUrl("https://6a1270a678d0434e0d5d3578.mockapi.io/api/v1/")
+        return Retrofit.Builder().baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create()).build()
             .create(CustomerService::class.java)
     }
