@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">EjyleAssessment</string>
+    <string name="label_submission_successful">Submission Successful!</string>
+    <string name="label_name">Name: %1$s</string>
+    <string name="label_email">Email: %1$s</string>
+    <string name="label_phone">Phone: %1$s</string>
+    <string name="label_city">City: %1$s</string>
+    <string name="label_register_another_customer">Register Another Customer</string>
+    <string name="label_summary_details">Summary Details:</string>
+    <string name="label_customer_registration">Customer Registration</string>
+    <string name="label_full_name">Full Name</string>
+    <string name="label_email_address">Email Address</string>
+    <string name="label_phone_number">Phone Number</string>
+    <string name="label_select_city">Select City</string>
+    <string-array name="cities">
+        <item>Dubai</item>
+        <item>Abu Dhabi</item>
+        <item>Sharjah</item>
+        <item>Riyadh</item>
+    </string-array>
 </resources>

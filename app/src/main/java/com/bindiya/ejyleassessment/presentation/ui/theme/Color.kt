@@ -1,4 +1,4 @@
-package com.bindiya.ejyleassessment.ui.theme
+package com.bindiya.ejyleassessment.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

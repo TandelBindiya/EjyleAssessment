@@ -2,6 +2,9 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.hilt.android)
+    alias(libs.plugins.ksp)
+
 }
 
 android {
@@ -21,12 +24,15 @@ android {
     }
 
     buildTypes {
+        debug { buildConfigField("String","BASE_URL","\"https://6a1270a678d0434e0d5d3578.mockapi.io/api/v1/\"")}
         release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String","BASE_URL","\"https://6a1270a678d0434e0d5d3578.mockapi.io/api/v1/\"")
+
         }
     }
     compileOptions {
@@ -38,6 +44,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig=true
     }
 }
 
@@ -50,6 +57,13 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    //Networking
+    implementation(libs.retrofit.core)
+    implementation(libs.retrofit.converter.gson)
+    // Hilt DI
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+    implementation(libs.hilt.navigation.compose)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
